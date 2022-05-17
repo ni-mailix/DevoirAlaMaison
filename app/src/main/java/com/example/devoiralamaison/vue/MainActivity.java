@@ -17,6 +17,8 @@ import com.example.devoiralamaison.modele.Profil;
 public class MainActivity extends AppCompatActivity {
 
 
+    private Controle controle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,16 +32,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText isaVoalohany;
     private EditText isaFaharoa;
     private EditText valinyUtilisateur;
+    private Float valinyTenaIzy;
     private ImageView addition = null;
     private ImageView soustraction = null;
     private ImageView multiplication = null;
     private ImageView division = null;
-    private Controle controle;
-    private final Profil profil = null;
     private Integer operateur = 0;
+    private ImageView imgValiny;
 
     private void Init() {
-
         isaVoalohany = findViewById(R.id.isaVoalohany);
         isaFaharoa = findViewById(R.id.isaFaharoa);
         addition = findViewById(R.id.imgAddition);
@@ -47,9 +48,11 @@ public class MainActivity extends AppCompatActivity {
         multiplication = findViewById(R.id.imgMultiplication);
         division = findViewById(R.id.imgDivision);
         valinyUtilisateur = findViewById(R.id.valinyUtilisateur);
-        klikBtnValiny ();
+        klikBtnValiny();
+        vOperateur();
+    }
 
-
+    private Integer vOperateur(){
         addition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        return operateur;
     }
 
 
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
           public void onClick(View view) {
               Float isaVoalohany = Float.valueOf(0);
               Float isaFaharoa = Float.valueOf(0);
-              Integer operateur = 0;
+              Integer operateur = vOperateur();
               Float valinyUtilisateur = Float.valueOf(0);
               Float valinyTenaIzy = Float.valueOf(0);
 
@@ -125,17 +129,30 @@ public class MainActivity extends AppCompatActivity {
                   isaVoalohany = Float.parseFloat(isaVoalohany.getClass().toString());
                   isaFaharoa = Float.parseFloat(isaFaharoa.getClass().toString());
                   operateur = Integer.parseInt(operateur.toString());
-                  valinyTenaIzy = this.
                 } catch ( Exception e) {}
 
-                 fampitahana(valinyUtilisateur,valinyTenaIzy);
+                 fampitahana(isaVoalohany, isaFaharoa, operateur,valinyTenaIzy, valinyUtilisateur);
+
+
+
+                  if (valinyTenaIzy == valinyUtilisateur)
+                  {
+                      imgValiny.setImageResource(R.drawable.tsara);
+                  } else {
+                      imgValiny.setImageResource(R.drawable.ratsy);
+                  }
+
+
+
+
+
                   }
   });
 
 }
 
-private void fampitahana (Float valinyUtilisateur, Float valinyTenaIzy){
-    this.controle.creerProfil(isaVoalohany, operateur, isaFaharoa, valinyUtilisateur, valinyTenaIzy);
+private void fampitahana(Float isaVoalohany,  Float isaFaharoa, Integer operateur, Float valinyTenaIzy, Float valinyUtilisateur){
+    this.controle.creerProfil(isaVoalohany,  isaFaharoa, operateur, valinyTenaIzy, valinyUtilisateur);
     }
 
 }

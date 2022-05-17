@@ -3,6 +3,9 @@ package com.example.devoiralamaison.modele;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+
 import com.example.devoiralamaison.R;
 
 import com.example.devoiralamaison.vue.MainActivity;
@@ -62,23 +65,21 @@ public class Profil {
         if (isaFaharoa == 0){
             //Toast.makeText(this, "Tsy mety ny division 0",Toast.LENGTH_SHORT ).show();
 
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
+//set icon
+                //    .setIcon(android.R.drawable.ic_dialog_alert)//set title
+                    .setTitle("Are you sure to Exit")//set message
+                    .setMessage("Exiting will call finish() method")
+                    .show();
+
+
         } else {
             valinyTenaIzy = isaVoalohany / isaFaharoa;
         }
     }
     }
 
-    private void fampitahana(){
-        Float valinyTenaIzy;
-        Float valinyUtilisateur;
 
-        if (this.valinyTenaIzy == this.valinyUtilisateur)
-        {
-            imgValiny.setImageResource(R.drawable.tsara);
-        } else {
-            imgValiny.setImageResource(R.drawable.ratsy);
-        }
-    }
 
 }
 

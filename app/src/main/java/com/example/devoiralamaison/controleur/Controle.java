@@ -28,7 +28,7 @@ public class Controle {
     }
 
     public ImageView getFampitahana(){
-        return profil.getImgSmiley();
+        return profil.getImgValiny();
     }
 
 }
