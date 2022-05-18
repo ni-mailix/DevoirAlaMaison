@@ -22,13 +22,5 @@ public class Controle {
     public void creerProfil (Float isaVoalohany,Float isaFaharoa, Integer operateur,   Float valinyTenaIzy, Float valinyUtilisateur){
         profil = new Profil (isaVoalohany, isaFaharoa, operateur, valinyUtilisateur, valinyTenaIzy);
     }
-/*
-    public float getValinyTenaIzy (){
-        return profil.getValinyTenaIzy();
-    }
 
-    public ImageView getFampitahana(){
-        return profil.getImgValiny();
-    }
-*/
 }

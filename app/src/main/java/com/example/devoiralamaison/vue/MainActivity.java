@@ -138,18 +138,10 @@ public class MainActivity extends AppCompatActivity {
                   isaVoalohany = Float.parseFloat(isaVoalohany.getClass().toString());
                   isaFaharoa = Float.parseFloat(isaFaharoa.getClass().toString());
                   operateur = Integer.parseInt(operateur.toString());
+                valinyTenaIzy = Float.parseFloat(valinyTenaIzy.getClass().toString());
                 } catch ( Exception e) {}
 
                  fampitahana(isaVoalohany, isaFaharoa, operateur,valinyTenaIzy, valinyUtilisateur);
-
-
-
-
-
-
-
-
-
                   }
   });
 
