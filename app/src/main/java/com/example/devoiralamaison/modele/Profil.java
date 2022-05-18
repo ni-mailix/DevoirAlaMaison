@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog.Builder;
 
 import com.example.devoiralamaison.R;
 
@@ -62,20 +63,21 @@ public class Profil {
     }else if (operateur ==3){
         valinyTenaIzy = isaVoalohany * isaFaharoa;
     }else{
+        /*
         if (isaFaharoa == 0){
-            //Toast.makeText(this, "Tsy mety ny division 0",Toast.LENGTH_SHORT ).show();
-
-            AlertDialog alertDialog = new AlertDialog.Builder(this)
+            Toast.makeText(this, "Tsy mety ny division 0",Toast.LENGTH_SHORT ).show();
+/*
+            AlertDialog alertDialog = new Builder(this, "Division 0 tsy mety")
 //set icon
                 //    .setIcon(android.R.drawable.ic_dialog_alert)//set title
-                    .setTitle("Are you sure to Exit")//set message
-                    .setMessage("Exiting will call finish() method")
+                    .setTitle("Division 0")//set message
+                    .setMessage("Tsy mety ny division 0")
                     .show();
 
 
-        } else {
+        } else {*/
             valinyTenaIzy = isaVoalohany / isaFaharoa;
-        }
+       // }
     }
     }
 

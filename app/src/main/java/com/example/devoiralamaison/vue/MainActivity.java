@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
         multiplication = findViewById(R.id.imgMultiplication);
         division = findViewById(R.id.imgDivision);
         valinyUtilisateur = findViewById(R.id.valinyUtilisateur);
-        klikBtnValiny();
+        imgValiny = (ImageView) findViewById(R.id.imgTsara);
         vOperateur();
+        klikBtnValiny();
+
     }
 
     private Integer vOperateur(){
@@ -116,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
     //lier les valeurs créés avec le valeur en entrée graphique écran
 
   private void klikBtnValiny (){
+/*
+      if (isaFaharoa == 0){
+          Toast.makeText(this, "Tsy mety ny division 0",Toast.LENGTH_SHORT ).show();
+      }
+       */
+
       findViewById(R.id.btValiny).setOnClickListener(new Button.OnClickListener() {
           @Override
           public void onClick(View view) {
@@ -135,12 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                  if (valinyTenaIzy == valinyUtilisateur)
-                  {
-                      imgValiny.setImageResource(R.drawable.tsara);
-                  } else {
-                      imgValiny.setImageResource(R.drawable.ratsy);
-                  }
+
 
 
 
@@ -153,6 +157,13 @@ public class MainActivity extends AppCompatActivity {
 
 private void fampitahana(Float isaVoalohany,  Float isaFaharoa, Integer operateur, Float valinyTenaIzy, Float valinyUtilisateur){
     this.controle.creerProfil(isaVoalohany,  isaFaharoa, operateur, valinyTenaIzy, valinyUtilisateur);
+
+    if (valinyTenaIzy == valinyUtilisateur)
+    {
+        imgValiny.setImageResource(R.drawable.ratsy);
+    } else {
+        imgValiny.setImageResource(R.drawable.tsara);
+    }
     }
 
 }
