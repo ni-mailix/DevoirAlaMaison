@@ -1,15 +1,8 @@
 package com.example.devoiralamaison.modele;
 
-import android.content.Context;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AlertDialog.Builder;
-
-import com.example.devoiralamaison.R;
-
-import com.example.devoiralamaison.vue.MainActivity;
+//import com.example.devoiralamaison.vue.MainActivity;
 
 public class Profil {
 
@@ -27,11 +20,10 @@ public class Profil {
     public Float getIsaFaharoa() {
         return isaFaharoa;
     }
-
+/*
     public Integer getOperateur() {
-        return operateur;
-    }
-
+        return new ;
+    }*/
     public Float getValinyUtilisateur() {
         return valinyUtilisateur;
     }
@@ -45,16 +37,16 @@ public class Profil {
     }
 
 
-    public Profil (Float isaVoalohany, Float isaFaharoa, Integer operateur, Float valinyTenaIzy, Float valinyUtilisateur)
+    public Profil (Float isaVoalohany, Float isaFaharoa, Float valinyUtilisateur, Float valinyTenaIzy, Integer operateur)
     {
     this.isaVoalohany = isaVoalohany;
     this.isaFaharoa = isaFaharoa;
-    this.operateur = operateur;
-    this.calculValinyTenaIzy();
+    this.operateur = 0;
     this.valinyUtilisateur = valinyUtilisateur;
+    this.calculValinyTenaIzy();
     }
 
-    private void calculValinyTenaIzy ()
+    private  void  calculValinyTenaIzy ()
     {
     if (operateur == 1){
         valinyTenaIzy = isaVoalohany + isaFaharoa;
@@ -79,8 +71,8 @@ public class Profil {
             valinyTenaIzy = isaVoalohany / isaFaharoa;
        // }
     }
+   // return valinyTenaIzy;
     }
-
 
 
 }

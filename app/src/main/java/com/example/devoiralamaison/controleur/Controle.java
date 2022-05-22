@@ -19,8 +19,12 @@ public class Controle {
     }
 
 
-    public void creerProfil (Float isaVoalohany,Float isaFaharoa, Integer operateur,   Float valinyTenaIzy, Float valinyUtilisateur){
-        profil = new Profil (isaVoalohany, isaFaharoa, operateur, valinyUtilisateur, valinyTenaIzy);
+    public void creerProfil (Float isaVoalohany,Float isaFaharoa,  Float valinyUtilisateur, Float valinyTenaIzy, Integer operateur){
+        profil = new Profil (isaVoalohany, isaFaharoa, valinyUtilisateur, valinyTenaIzy, operateur);
+    }
+
+    public float getValinyTenaIzy() {
+        return profil.getValinyTenaIzy();
     }
 
 }
